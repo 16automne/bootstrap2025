@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset=UTF-8">
+	<title>제이쿼리 문서객체조작_dimensions_크기 구하기 </title>
+	<style>
+		#box01{
+			width:300px;height:200px;
+			background-color:#ffff00;
+			padding:20px 30px; /* 위,아래  왼,오른쪽 */
+		}
+		.result{
+			color:#f00;
+			background-color:#ccc;
+		}
+		
+		.result2{
+			color:#00f;
+			background-color:#ccc;
+		}
+
+		a{
+			position:fixed;
+			right:50px;bottom:100px;
+			background:#000;
+			color:#fff;
+			padding:10px 8px;
+			text-decoration:none;
+			display:none;
+		}
+	</style>
+</head>
+<body>
+	<h2>제이쿼리 dimensions_크기구하기</h2>
+	<p>제이쿼리에서는 사용자가 선택한 요소의 크기값을 구하거나 크기값을 설정할 수 가 있다.</p>
+	
+	<ul>
+		<li>width(); - 선택한 요소의 가로크기를 구하거나 설정하기</li>
+		<li>height(); - 선택한 요소의 세로크기를 구하거나 설정하기</li>
+		<li>innerWidth(); - 선택한 요소의 가로크기(패딩포함)를 구하거나 설정하기</li>
+		<li>innerHeight(); - 선택한 요소의 세로크기(패딩포함)를 구하거나 설정하기</li>
+	</ul>
+	
+	<button id="btn01">width();</button>
+	<button id="btn02">height();</button>
+	<button id="btn03">innerWidth();</button>
+	<button id="btn04">innerHeight();</button>
+	
+	<div id="box01">가로300px; 세로200px;</div>
+	<p class="result">240px입니다.</p>
+	
+	<h3>버튼을 클릭하면 현재 윈도우창의 너비와 높이, document의 너비와 높이값 출력하기</h3>
+	
+	<button id="btn05">윈도우, document크기 구하기</button>
+	
+	<p class="result2">document의 너비는 984px이고 높이는 3811px이고<br> window의 너비는 984px이고 높이는 866px입니다.</p>
+	
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+@charset "UTF-8";
+main {
+  width: 100%;
+  color: #2F2F2F;
+}
+
+.mslide {
+  width: 100%;
+}
+
+.mslide ul li a img {
+  width: 100%;
+}
+
+.m_char {
+  width: 100%;
+  background: #f1f1f1;
+  display: flex;
+  padding: 10% 20%;
+}
+
+.m_char h2 {
+  font-size: 3rem;
+  padding-bottom: 5%;
+}
+
+.m_char section {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.m_char_nav {
+  display: flex;
+  gap: 15px;
+  margin: 0 auto;
+}
+
+.m_char_nav > ul {
+  text-align: left;
+}
+
+.m_char_nav > li {
+  margin: 20px 0px;
+}
+
+.m_char_nav > li > a {
+  background: #2F2F2F;
+  font-weight: bold;
+  color: #fff;
+  padding: 15px 10px;
+}
+
+.m_char section {
+  width: 50%;
+  max-width: 900px;
+}
+
+.m_act {
+  background: #F36F21 !important;
+}
+
+body {
+  font-family: "맑은 고딕", Arial, sans-serif;
+  font-weight: 500;
+}
+
+.bg {
+  width: 100%;
+  background-color: #F36F21;
+}
+
+.story {
+  width: 1080px;
+  background-color: #F36F21;
+  padding: 30px;
+  position: relative;
+  left: 300px;
+}
+
+.story > h2 {
+  color: #fff;
+  font-size: 53px;
+  margin-bottom: 30px;
+}
+
+#gallery_story {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  margin: 0 30px 0 30px;
+}
+
+#gallery_story > article {
+  overflow: hidden;
+}
+
+#gallery_story .miero_g_02 {
+  grid-area: 1/2/3/3;
+}
+
+#gallery_story > article > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+#gallery_story figure {
+  position: relative;
+}
+
+#gallery_story figcaption {
+  background-color: #000;
+  color: #fff;
+  font-size: 20px;
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  left: 0px;
+  bottom: -150px;
+  transition: 0.5s;
+  padding: 20px;
+}
+
+#gallery_story a:hover figcaption {
+  bottom: 0px;
+}
+
+#gallery_story h3 {
+  color: #F36F21;
+  font-size: 30px;
+  padding-bottom: 15px;
+}
+
+.g_mp4 {
+  border: 2px solid #fff;
+  padding: 10px;
+  position: absolute;
+  right: 60px;
+  bottom: 40px;
+}/*# sourceMappingURL=main.css.map */

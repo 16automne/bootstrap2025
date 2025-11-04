@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="./css/09style.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+  <h2>내장함수</h2>
+  <p>@function 문법</p>
+  <ul>
+    <li>사용자가 함수를 직접 정의해 사용가능 문법</li>
+    <li>@mixin과 비슷해보이지만 반환되는 내용이 다름</li>
+    <li>@mixindms 지정한 스타일을 반환하지만, @function(함수)는 연산된 값을 @return키워드로 반환</li>
+  </ul>
+  <pre>
+    문법)
+    @mixin 믹스인명($매개변수){
+      스타일 서식
+    }
+    ----------------------------
+    @function 함수명($매개변수){
+      @return 값;
+    }
+    ----------------------------
+    "호출 방법"
+    @mixin기법은 호출시 '@include 믹스인이름(인수);' 처럼 사용하고, 함수문법은 호출시 '함수명(인수)'으로 호출해 사용.
+  </pre>
+
+  <h3>실습1. 가로1180 박스안에 12개 칼럼 지정 > 각 박스에 몇 컬럼 적용할것인지 설정하는 함수 만들기</h3>
+  <div class="wrap">
+    <div class="box01">1 = 1/12</div>
+    <div class="box02">6 = 6/12</div>
+    <div class="box03">12 = 12/12</div>
+  </div>
+
+  <h3>실습2. 내장함수로 버튼 서식 변경</h3>
+  <p>내장함수 - sass에 미리 내장되어있는 함수</p>
+  <p>그 함수들은 이름이 미리 지저오디어있음. url 주소 참고 (https://sass-lang.com/documentation/modules)</p>
+
+  <input type="button" value="버튼" class="btn btn1">
+  <input type="button" value="버튼" class="btn btn2">
+  <input type="button" value="버튼" class="btn btn3">
+  <input type="button" value="버튼" class="btn btn4">
+  <input type="button" value="버튼" class="btn btn5">
+  <input type="button" value="버튼" class="btn btn6">
+  <input type="button" value="버튼" class="btn btn7">
+  <input type="button" value="버튼" class="btn btn8">
+  
+</body>
+</html>

@@ -1,0 +1,68 @@
+//style02.css
+
+$t_color_gray: #333;
+$t_color_r: #d93024;
+$t_color_g: #30d924;
+$t_color_b: #2463d9;
+$t_color_w: #eee;
+$bg_color_y: #d9cd24;
+
+$t_size_s: 12px;  /*기본크기 12px*/
+$t_size_m: 16px;  /*메뉴크기 16px*/
+$t_size_t1: 22px; /*큰 제목 22px*/
+$t_size_t2: 20px; /*작은 제목 20px*/
+
+body{
+  font-family: '맑은 고딕', Arial, sans-serif;
+  font-size: $t_size_s;
+  color: $t_color_gray;
+}
+
+// 제목 서식
+@mixin h2_title{
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: $t_size_t1;
+  color: $t_color_b;
+}
+@mixin h3_title{
+  font-size: $t_size_t2;
+  color: $t_color_r;
+  line-height: 40px;
+}
+.title2{@include h2_title;}
+.title3{@include h3_title;}
+
+// ...생략기호 나오게 하기 서식
+@mixin txt_over{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.p01{
+  width: 300px;
+  border: 1px solid $t_color_gray;
+  background: $bg_color_y;
+  @include txt_over;
+}
+
+// 취소하기, 장바구니 버튼 서식
+// 1.글자 서식
+@mixin btnTxt{
+  font-family: "Noto Sans";
+  font-weight: bold;
+  font-size: $t_size_m;
+}
+// 2.버튼 서식
+@mixin btnArea{
+  border: 1px solid $t_color_gray;
+  padding: 0px 10px;
+  width: 170px; height: 56px;
+}
+// 3.병합(글자서식+버튼서식)
+@mixin btn{
+  @include btnTxt;
+  @include btnArea;
+}
+.btn{@include btn;}
+.bnt_w{color: #df6dbb; background:$t_color_w;}
+.bnt_c{color: $t_color_w; background:#df6dbb;}

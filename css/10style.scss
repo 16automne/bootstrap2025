@@ -1,0 +1,46 @@
+// 10style.scss
+
+@charset "utf-8";
+
+$width1: 1200px;
+$width2: 1024px; //큰 테블릿
+$width3: 390px;
+$width4: 768px; //작은 테블릿
+
+@mixin box{
+  height: 50px;
+  border: 3px solid  #333;
+  margin-bottom: 20px;
+}
+
+//div 서식 적용
+div{@include box};
+.pc{
+  width: $width1;
+  background: if($width1>500, pink, lightblue);
+}
+.tablet{
+  width: $width2;
+  background: if($width2>500, pink, lightblue);
+}
+.mobile{
+  width: $width3;
+  background: if($width3>500, pink, lightblue);
+}
+
+.box03{
+  width: $width4; //768
+  @if($width4>=767){
+    background: pink;
+  }@else{
+    background: lightblue;
+  }
+}
+.box04{
+  width: $width2; //1024
+  @if($width2>=1024){
+    background: lightgreen;
+  }@else{
+    background: lightcoral;
+  }
+}

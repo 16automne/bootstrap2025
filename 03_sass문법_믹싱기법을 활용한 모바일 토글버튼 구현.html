@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="./css/03_sass_mixin.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <h2>토글버튼 구현</h2>
+  <p>모바일 토글버튼(전체메뉴)을 html태그로 작성하여 클릭시 'X'로 변경 & X클릭시  토글모양으로 다시 변경</p>
+  <dl>
+    <dt>구현하기</dt>
+    <dd>1. css로 버튼 구현 (with. checkbox)</dd>
+    <dd>2. javascript로 버튼 구현</dd>
+  </dl>
+
+  <h3>1. css로 버튼 구현 (with. checkbox)</h3>
+  <div class="navi">
+    <input type="checkbox" id="toggle">
+    <label for="toggel" class="toggle_btn">
+      <span class="bar bar1"></span>
+      <span class="bar bar2"></span>
+      <span class="bar bar3"></span>
+    </label>
+  </div>
+
+  <h3>2. javascript로 버튼 구현</h3>
+  <div class="toggle_btn" id="t_btn">
+    <span class="bar bar1" id="b1"></span>
+    <span class="bar bar2" id="b2"></span>
+    <span class="bar bar3" id="b3"></span>
+  </div>
+
+  <script>
+    //1.변수 선언
+    const t_btn = document.getElementById('t_btn');
+    const bar1 = document.getElementById('b1');
+    const bar2 = document.getElementById('b2');
+    const bar3 = document.getElementById('b3');
+    let n=0;
+    //2.클릭 > 해당 바 움직
+    t_btn.addEventListener('click', function(){
+      if(n==0){
+        bar1.classList.add('rotate1');
+        bar2.classList.add('none');
+        bar3.classList.add('ratate2');
+        n = 1;
+      }
+      else{
+        bar1.classList.remove('rotate1');
+        bar2.classList.remove('none');
+        bar3.classList.remove('ratate2');
+        n = 0;
+      }
+    });
+  </script>
+</body>
+</html>

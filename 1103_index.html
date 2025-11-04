@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>물건팔기</title>
+
+  <!-- 1. 부트스트랩 css CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <!-- 2. 부트스트랩 js library CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <!-- 3. 부트스트랩 iconFont CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <style>
+    body{padding: 20px 30px;}
+    .header{display: flex;}
+    .header > h2{
+      position: relative;
+      margin: 0 auto;
+    }
+    .header > i, .header > input{position: absolute;}
+    .header > i{left: 50px;}
+    .header > input{right: 50px;}
+
+    .photo{position: relative; top: 10px;}
+    .photo-upload-btn {
+      width: 80px; height: 80px;
+      color: #495057;
+    }
+    .photo-upload-btn i {
+      font-size: 1.5rem;
+    }
+  </style>
+
+</head>
+<body>
+  <!-- Header (상단 고정) -->
+  <header class="fixed-header d-flex justify-content-between align-items-center border-bottom">
+    <!-- 닫기 -->
+    <a href="#" class="text-dark">
+        <i class="bi bi-x-lg fs-4"></i>
+    </a>
+    <!-- 제목 -->
+    <h2 class="h5 m-0" style="position: absolute; left: 50%; transform: translateX(-50%);">내 물건 팔기</h2>
+    <!-- 임시저장 -->
+    <button class="btn btn-sm btn-link text-decoration-none text-secondary p-0" type="button">임시 저장</button>
+  </header>
+
+  <!-- Main -->
+  <div class="main-content">
+    <!-- 1. 사진첨부 -->
+    <div class="photo mb-4 pb-3">
+      <button class="photo-upload-btn bg-light rounded" type="button">
+        <i class="bi bi-camera-fill m-0 p-0"></i>
+        <p class="mb-0 small fw-bold">0/10</p>
+      </button>
+    </div>
+
+    <!-- 2. 제목 입력 -->
+    <div class="title mb-4 pb-3">
+      <label for="itemTitle" class="form-label fw-bold">제목</label>
+      <input type="text" id="itemTitle" placeholder="제목" class="form-control mb-1">
+    </div>
+
+    <!-- 3. 거래 방식 및 가격 -->
+    <div class="deal mb-4 pb-4">
+      <!-- 거래방식 -->
+      <div class="mb-2">
+        <label class="form-label fw-bold">거래 방식</label>
+      </div>            
+      <!-- 판매/나눔하기 -->
+      <div class="mb-3">
+        <span class="badge badge-pill-custom text-bg-dark rounded-pill" id="sellBtn" onclick="selectDealType('sellBtn')">판매하기</span>
+        <span class="badge badge-pill-custom text-bg-light rounded-pill" id="shareBtn" onclick="selectDealType('shareBtn')">나눔하기</span>
+      </div>
+      
+      <!-- 가격입력  / 가격제안체크박스 -->
+      <div class="mb-3">
+        <input type="number" maxlength="15" placeholder="가격을 입력해주세요" class="form-control mb-1">
+        <div class="price-suggestion-container">
+          <input type="checkbox" id="priceSuggest" class="form-check-input" checked>
+          <label for="priceSuggest" class="form-check-label">가격 제안 받기</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. 자세한 설명 -->
+    <div class="detail mb-3">
+      <label for="itemDescription" class="form-label fw-bold">자세한 설명</label>
+      <textarea class="form-control mb-1" id="itemDescription" rows="6" placeholder="다산동에 올릴 게시글 내용을 작성해주세요.(판매 금지 물품은 게시가 제한될 수 있어요.) 신뢰할 수 있는 거래를 위해 자세히 적어주세요. 과학기술정보통신부, 한국 인터넷진흥원과 함께 해요."></textarea>
+      <!-- 자주 쓰는 문구 -->
+      <div class="txt">
+          <button class="btn btn-sm btn-link bg-light text-dark text-decoration-none fw-bold" type="button">자주 쓰는 문구</button>
+      </div>
+    </div>
+    
+    <!-- 5. 거래 희망 장소 -->
+    <div class="location mb-3">
+      <label for="dealLocation" class="form-label fw-bold">거래 희망 장소</label>
+      <div class="input-group">
+        <input type="text" id="dealLocation" placeholder="위치 추가" class="form-control mb-1">
+      </div>
+    </div>
+
+    <!-- 6. 동네 선택 -->
+    <div class="neighborhood mb-3">
+      <a href="#" class="d-flex justify-content-between align-items-center text-dark text-decoration-none py-2">
+        <span class="fw-bold">보여줄 동네 선택<i class="bi bi-chevron-right fs-5"></i></span>
+      </a>
+    </div>
+      
+  </div>
+
+  <!-- Footer (작성 완료) -->
+  <footer class="fixed-footer-button">
+    <button type="submit" class="btn btn-warning btn-lg w-100 fw-bold" style="color: #fff; background-color: orangered;">작성 완료</button>
+  </footer>
+    
+  <!-- 제이쿼리 라이브러리 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script>
+
+  </script>
+  
+</body>
+</html>

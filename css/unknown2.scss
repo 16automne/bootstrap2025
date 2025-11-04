@@ -1,0 +1,37 @@
+// unknown2.scss - bootstrap모음
+
+*{padding: 0px; margin: 0px;}
+body{
+width: 100%;
+font-family: '맑은 고딕', Arial, sans-serif;
+font-size: 0.81rem; /* 13px값이 아닌 상대단위인 0.81rem으로 변환 */
+color: #333;
+}
+a{text-decoration: none; color: #333;}
+header > h2 {
+text-align: center;
+background: #d631f0;
+margin-bottom: 14px;
+line-height: 50px;
+}
+
+dl{
+margin: 0px; line-height: 40px;
+}
+dl > dt{
+  background: #ff98b2;
+  color: #fff; font-weight: bold;
+  line-height: 40px;
+  font-size: 1rem;
+  text-indent: 10px;  /* 들여쓰기 */
+}
+dl > dd{
+  background-color: #eee;
+  border-bottom: 1px solid #9c9c9c;
+  text-indent: 16px;  /* 들여쓰기 */
+}
+dl > dd > a{transition: 0.5s; display: block;}
+dl > dd > a:hover{
+  background-color: #333;
+  color: #fff;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>부트스트랩 08_모달윈도 띄우기 - 버튼 클릭시 로그인 모달 윈도 띄우기</title>
+  <!-- 1. 부트스트랩 css CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <!-- 2. 부트스트랩 js library CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <!-- 3. 부트스트랩 iconFont CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+</head>
+<body>
+  <h2>모달윈도 띄우기</h2>
+  <input type="button" value="로그인" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_box">
+
+  <!-- 모달윈도 -->
+  <div class="modal fade" id="modal_box">
+    <div class="modal-dialog modal-dialog-centerd">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- 로그인 아이콘 -->
+          <h1><i class="bi bi-person-fill"></i></h1>
+          <!-- 닫기버튼 -->
+          <button type="button" class="btn-close" arial-label="Close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <h2>Login</h2>
+          <!-- 이름 작성 영역 -->
+          <div class="input-group mb-3">
+            <input type="text" placeholder="User Name" class="form-control form-control-lg" aria-label="사용자 이름">
+          </div>
+          <!-- pw 작성 영역 -->
+          <div class="input-group mb-3">
+            <input type="password" placeholder="Password" class="form-control form-control-lg" aria-label="비밀번호">
+          </div>
+          <!-- login btn -->
+          <div class="d-grid gap-2">
+            <input type="submit" class="btn btn-primary" value="LOGIN">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

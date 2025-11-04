@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03_제이쿼리 문서객체조작_위치 메서드_스크롤 메서드</title>
+  <style>
+    /* html, body{
+      scroll-behavior: smooth;
+    } */
+    body{height:5000px;width:2000px;}
+  </style>
+</head>
+<body>
+  <h2>03_제이쿼리 문서객체조작_위치 메서드_스크롤 메서드</h2>
+  <h3>1. offset메서드</h3>
+  <p>사용자가 선택한 요소의 위쪽이나 왼쪽을 기준으로 떨어져 있는 위치값을 구하고자 할 때 사용하는 메서드이다.</p>
+
+  <input type="button" value="버튼 클릭시 box의 현재문서에서 떨어진 위치값을 알 수 있습니다." id="btn01">
+
+  <div class="box">
+    현재 box의 위치값을 출력해보기
+  </div>
+
+  <h3>2. scroll메서드</h3>
+  <p>scroll메서드는 윈도우 객체의 스크롤 바의 위치값을 반환하고 설정해주는 메서드이다.(가로, 세로)</p>
+
+  <span class="spos1"></span>
+  <span class="spos2"></span>
+
+  <article class="con">
+    <div class="l_box">왼쪽박스</div>
+    <div class="r_box">오른쪽박스</div>
+  </article>
+
+  <a href="#" title="위로 바로가기" class="t_btn">Top</a>
+
+</body>
+</html>

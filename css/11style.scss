@@ -1,0 +1,69 @@
+// 11style.scss
+
+@charset "utf-8";
+
+div{
+  height: 50px;
+  margin-bottom: 10px;
+  background: lightyellow;
+}
+
+//변수i는 1부터 5 전까지 반복 실행
+@for $i from 1 to 8{
+  div:nth-of-type(#{$i}){
+    //반복할 내용
+    width: 50px*$i; //50씩 증가 (50, 100, 150, 200)
+  }
+}
+//변수i는 1부터 5 까지 반복 실행
+@for $i from 1 through 5{
+  div:nth-of-type(#{$i}){
+    //반복할 내용
+    width: 50px*$i; //50씩 증가 (50, 100, 150, 200, 250)
+  }
+}
+
+
+.qna{width: 100%; text-align: center;}
+.searchbox{
+  width: 80%; padding: 15px 0px;
+  background: #ccc;
+  margin: 0 auto;
+  text-align: right; line-height: 10px;
+  > label{
+    background: #333; color: #fff;
+    font-size: 15px;
+    padding: 6px 2px;  
+    margin-right: 15px;
+    cursor: pointer;
+  }
+}
+.qna input[type="search"]{
+  width: 500px; height: 30px;
+  border: none;
+  background: #fff;
+}
+.qna > dl{
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+}
+@for $i from 1 through 10{
+  dt:nth-of-type(#{$i}){
+    border-bottom: 1px solid #333;
+    padding: 10px 10px 10px 20px;
+    color: green; font-weight: bold;
+    cursor: pointer;
+  }
+  dd:nth-of-type(#{$i}){
+    background: #eee;
+    padding: 10px 10px 10px 30px;
+    margin: 0px;
+  }
+}
+dl > dt > i.fas{float:right;}
+.qna dd{display: none;}
+.act{
+  transform: rotate(180deg) !important;
+}
+

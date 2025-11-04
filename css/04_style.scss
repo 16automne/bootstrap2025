@@ -1,0 +1,86 @@
+/* style.scss파일 */
+
+$b_color:#333;//오버전
+$f_color:#f00;//오버후
+$time:0.3s; //시간변수
+
+//sns서식
+@mixin sns{
+  font-size:30px;
+  color:$b_color;
+}
+
+.sns{
+  display:flex;
+  width:200px;
+  justify-content:space-around;
+}
+.sns ul, .sns li{
+  list-style:none;
+  @include sns;
+}
+@mixin hover{
+  color:$f_color;
+  // transition:$time;
+}
+.sns li i{ transition:$time;}
+.sns li:hover i{
+  @include hover;
+  transform:translateY(-5px);
+}
+
+//버튼 믹스인 함수
+@mixin btn($t_color){
+  width:200px;height:40px;
+  border:1px solid #ccc;
+  text-align:center;
+  color:$t_color;
+}
+
+.btn{@include btn(#ccc)}
+
+//매개변수가 있는 믹스인 함수 작성
+@mixin bgcolor($bgcolor){
+  background:$bgcolor;
+}
+
+//sns별 색상서식
+.btn1{@include bgcolor(rgb(229, 122, 173))}
+.btn2{@include bgcolor(rgb(14, 122, 8))}
+.btn3{@include bgcolor(rgb(174, 153, 18))}
+
+// 실습3. mixin함수에 매개변수값 설정(기본값)
+@mixin border_style($w:1px, $s:solid, $c:#ccc){border: $w $s $c;}
+.list01 > li:first-child{@include border_style;}
+.list01 > li:nth-child(2){@include border_style(3px,solid,red);}
+.list01 > li:nth-child(3){@include border_style(4px,double,yellow);}
+.list01 > li:nth-child(4){@include border_style(4px,dotted,green);}
+.list01 > li:last-child{@include border_style(4px,dashed,blue);}
+
+// 실습3-1. 마우스 오버시 테두리 색상 검정색, 실선(3px)로 통일
+.list01 > li:hover{@include border_style(3px,solid,black);}
+
+// 실습4 - 달력서식
+@mixin border($w:1px, $s:solid, $c:#ccc){border: $w $s $c;}
+$t_width: 500px;  //크기변수
+
+.calender{
+  width: $t_width;
+  border-collapse: collapse;
+  @include border;
+  // text-align: center;
+}
+.calender th, .calender td{@include border;}
+//캡션 서식
+@mixin t_caption($bg: rgb(255, 235, 120)){
+  background: $bg;
+  padding: 10px 0px;
+  font-weight: bold;
+}
+.calender caption{@include t_caption;}
+//홀수 번째 라인 서식 변경
+@mixin odd_tr($bg:#fff5bc){background: $bg;}
+.calender tr:nth-child(2n+1){@include odd_tr;}
+//짝수 번째 라인 서식 변경
+@mixin even_tr($bg:#fff9f2){background: $bg;}
+.calender tr:nth-child(2n){@include even_tr;}

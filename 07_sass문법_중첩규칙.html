@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="./css/07_style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <h2>중첩규칙</h2>
+  <p>중첩 규칙이란? 겹치거나 포개기</p>
+  <ol>
+    <li>선택자를 중첩하는 '규칙 중첩'</li>
+    <li>속성을 중첩하는 '속성 중첩'</li>
+  </ol>
+  <p>sass의 nesting(중첩)은 태그가 자손 혹은 후손인 경우 {}코드블록으로 중첩해 작성하는 기법</p>
+  <p>css의 경우 부모요소를 반복해 작성하는데 sass중첩규칙은 부모요소를 반복해서 작성을 안해도 됨</p>
+  <p>복잡한 구조 형태의 작업에 있어서 상위 선택자를 많이 상속해야 할 경우 css규칙을 간단하게 작성할 수 있으며, 그 구조를 한눈에 볼 수 있게 모듈화 가능</p>
+  <p>중첩은 무분별하게 사용하는 것은 권장 X</p>
+  <p>상위 선택자를 3Depth이상 사용할 경우 재활용이 제한적(그럴 경우 별도의 클래스 만들기)</p>
+
+  <!-- <div class="list">
+    <h3>SASS의 중첩 규칙과 속성</h3>
+    <ul>
+      <li><a href="#" title="">text link01</a></li>
+      <li><a href="#" title="">text link02</a></li>
+      <li><a href="#" title="">text link03</a></li>
+    </ul>
+  </div> -->
+
+  <!-- 실습하기 -->
+  <article>
+    <h3>실습하기</h3>
+    <div class="tab">
+      <div class="tabcon">
+        <!-- 첫번째 이미지 -->
+        <img src="./img/jomalone01.png" alt="" id="photo">
+        <!-- 두번째img -->
+        <!-- <img src="./img/jomalone02.png" alt="" id="phto"> -->
+        <!-- 세번째img -->
+        <!-- <img src="./img/jomalone03.png" alt="" id="phto"> -->
+        <!-- 네번째img -->
+        <!-- <img src="./img/jomalone04.png" alt="" id="phto"> -->
+      </div>
+      <ul>
+        <li><a href="./img/jomalone01.png" title="" class="act">Lime Basil & Mandarin Cologne</a></li>
+        <li><a href="./img/jomalone02.png" title="">Cypress & Grapevine Cologne</a></li>
+        <li><a href="./img/jomalone03.png" title="">Scarlet Poppy Cologne Intense</a></li>
+        <li><a href="./img/jomalone04.png" title="">Dark Amber & Ginger Lily Cologne</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- 방법1) javascript로 구현 -->
+  <script>
+    //1. 변수선언
+    //let tmnu = document.querySelectorAll('.tab ul > li'); //목록변수
+    //const photo = document.getElementById('photo'); //이미지변수
+
+    //2. 마우스 오버 이벤트
+    // for(let i=0; i < tmnu.length; i++){
+    //   tmnu[i].querySelector('a').addEventListener('mouseenter', function(){
+    //     // console.log(i);
+
+    //     // a태그 모두 act 서식 제거
+    //     for(let j=0; j < tmnu.length; j++){
+    //       tmnu[j].querySelector('a').classList.remove('act');
+    //     }
+    //     //마우스 올린 a요소에만 서식 적용
+    //     tmnu[i].querySelector('a').classList.add('act');
+
+    //     //해당 i번째 이미지가 나오도록 img속성값(href) 변경하기
+    //     let src = tmnu[i].querySelector('a').href;
+    //     console.log(src);
+
+    //     photo.src = src;  //이미지 속성값 대입해 이미지 변경
+    //   });
+    // }
+  </script>
+
+  <!-- 방법2) jQuery로 구현 -->
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      //1. 변수선언
+      let tmnu2 = $('.tab ul > li > a');
+      const photo2 = $('#photo');
+
+      //2. 마우스 오버 이벤트
+      tmnu2.mouseenter(function(){
+        //a에 적용된 모든 act서식 제거
+        $('.tab ul > li > a').removeClass('act');
+        $(this).addClass('act');  //마우스 올린 대상의 메뉴에 서식 적용
+
+        let src = $(this).attr('href'); //속성값을 변수에 담기
+
+        //src속성값을 이미지 src에 적용해 이미지가 변경되도록 하기
+        photo2.attr('src', src);
+      });
+    });
+  </script>
+</body>
+</html>
