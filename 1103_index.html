@@ -51,11 +51,19 @@
   <div class="main-content">
     <!-- 1. 사진첨부 -->
     <div class="photo mb-4 pb-3">
-      <button class="photo-upload-btn bg-light rounded" type="button">
-        <i class="bi bi-camera-fill m-0 p-0"></i>
-        <p class="mb-0 small fw-bold">0/10</p>
-      </button>
+      
+      <input class="photo-upload-btn bg-light rounded" type="file" id="photo">
+      <label for="photo"  style="width:60px;height:60px;border:1px solid #ccc; cursor:pointer;"><i class="bi bi-camera-fill m-0 p-0"></i><p class="mb-0 small fw-bold">0/10</p></label>
     </div>
+
+    <div class="my-3">
+        <input type="file" id="fileUpload" accept="image/*" class="d-none">
+        <label for="fileUpload" class="btn btn-light d-flex flex-column justify-content-center align-items-center"
+          style="width:60px;height:60px;border:1px solid #ccc; cursor:pointer;">
+          <i class="bi bi-camera-fill"></i>
+          <span class="mt-1">0/10</span>
+        </label>
+      </div>
 
     <!-- 2. 제목 입력 -->
     <div class="title mb-4 pb-3">
@@ -71,14 +79,14 @@
       </div>            
       <!-- 판매/나눔하기 -->
       <div class="mb-3">
-        <span class="badge badge-pill-custom text-bg-dark rounded-pill" id="sellBtn" onclick="selectDealType('sellBtn')">판매하기</span>
-        <span class="badge badge-pill-custom text-bg-light rounded-pill" id="shareBtn" onclick="selectDealType('shareBtn')">나눔하기</span>
+        <span class="badge badge-pill-custom text-bg-dark rounded-pill form-check col" id="sellBtn" onclick="selectDealType('sellBtn')">판매하기</span>
+        <span class="badge badge-pill-custom text-bg-light rounded-pill form-check col" id="shareBtn" onclick="selectDealType('shareBtn')">나눔하기</span>
       </div>
       
       <!-- 가격입력  / 가격제안체크박스 -->
       <div class="mb-3">
         <input type="number" maxlength="15" placeholder="가격을 입력해주세요" class="form-control mb-1">
-        <div class="price-suggestion-container">
+        <div class="price-suggest-container">
           <input type="checkbox" id="priceSuggest" class="form-check-input" checked>
           <label for="priceSuggest" class="form-check-label">가격 제안 받기</label>
         </div>

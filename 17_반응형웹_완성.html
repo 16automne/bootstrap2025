@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <!-- 1. 부트스트랩 css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <!-- 2. 부트스트랩 javascript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+  <style>
+    main{overflow:hidden;}
+    .logo{height:50px;}
+    #myCarousel{height:65vh;}
+    .carousel-item{
+      position:relative;
+      height:65vh;
+      margin-bottom:10px;
+    }
+    .carousel-item h3{
+      position:absolute;
+      z-index:100;
+      font-size:1.5rem;
+      color:#fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      left:50%;top:50%;
+      transform:translate(-50%, -50%);
+    }
+    .carousel-item img{width:100%;}
+
+    /* .containe{padding-top: 35%;} */
+    /* 정보트론 */
+    .jumbotron{
+      padding-top:50px;
+      padding-bottom:50px;
+      margin-bottom:50px;
+      background-image: url(./img/jumbotron_img.png); background-size: cover;
+    }
+    .jumbotron h2{
+      font-size:6rem;
+      margin-bottom:20px;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+    .jumbotron .txt01{
+      padding:10px 0px 30px 0px;
+      color: #fff;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    }
+    /* 2번 콘텐츠 서식 */
+    .cont2 img{width: 150px; height: 150px; border-radius:50%;}
+
+    /* 4번 콘텐츠 서식*/
+    .row4list img{width: 100%;}
+    .h02{padding: 5% 0%;}
+  </style>
+
+</head>
+<body>
+  <!-- 헤더영역 -->
+  <header>
+    <!-- 내비게이션 바 -->
+    <nav class="navbar navbar-dark bg-dark navbar-expand-md" aria-label="내비게이션 바">
+      <div class="container-fluid">
+        <a href="#" title="부트스트랩 로고">
+          <img src="./img/JoMalone_Logo.jpg" alt="" class="logo">
+        </a>
+        
+        <!-- 모바일 해상도일 경우 나오는 전체 메뉴 버튼 -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" aria-label="전체메뉴" data-bs-target="#menu">
+          <span class="navbar-toggle-icon"></span>
+        </button>
+
+        <!-- 가로메뉴 -->
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a href="#" title="" class="nav-link active">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" title="" class="nav-link">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" title="" class="nav-link disabled">Disabled</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" title="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">DropDown</a>
+              <ul class="dropdown-menu">
+                <li><a href="#" title="" class="dropdown-item">menu1</a></li>
+                <li><a href="#" title="" class="dropdown-item">menu2</a></li>
+                <li><a href="#" title="" class="dropdown-item">menu3</a></li>
+                <li><a href="#" title="" class="dropdown-item">menu4</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!-- 검색폼 -->
+          <form>
+            <input type="search" placeholder="검색어 입력" aria-label="검색어 입력" class="form-control">
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 메인영역 -->
+  <main>
+    <!-- 1. 메인 슬라이드 -->
+    <article id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+      <!-- 콘트롤 버튼 -->
+      <div class="carousel-indicators">
+        <button type="button" class="active" aria-label="slide1" data-bs-target="#myCarousel" data-bs-slide-to="0" aria-current="true"></button>
+        <button type="button" aria-label="slide2" data-bs-target="#myCarousel" data-bs-slide-to="1"></button>
+        <button type="button" aria-label="slide3" data-bs-target="#myCarousel" data-bs-slide-to="2"></button>
+      </div>
+
+      <!-- 슬라이드 박스 -->
+      <div class="caruosel_inner">
+        <div class="carousel-item active">
+          <h3>나만을 위한, 가장 잘 어울리는 향을 완성해 보세요</h3>
+          <img src="./img/slide1.avif" alt="1">
+        </div>
+        <div class="carousel-item">
+          <h3>어느 공간이든 그 장소에 맞는 향기로운 이야기를 채워 보세요</h3>
+          <img src="./img/slide2.avif" alt="2">
+        </div>
+        <div class="carousel-item">
+          <h3>향만큼이나 아이코닉한 조 말론 런던의 시그니처 박스에 담아 선물해보세요</h3>
+          <img src="./img/slide3.avif" alt="3">
+        </div>
+      </div>
+
+      <!-- 좌측버튼 -->
+      <button type="button" class="carousel-control-prev" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <!-- 우측버튼 -->
+      <button type="button" class="carousel-control-next" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span aria-hidden="true" class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </article>
+
+  <!-- 2. 가로 3단 목록 콘텐츠 -->
+  <article class="container">
+    <div class="row cont2 mt-5 mb-5">
+      <div class="col-lg-4 text-center">
+        <img src="./img/17_2_img1.jpeg" alt="">
+        <p>English Pear & Freesia Body Creme - 풍부한 영양을 선사하는 잉글리쉬 페어 앤 프리지아 바디 크림으로 당신의 데일리 루틴을 완성해보세요. 코코아 버터와 스위트 아몬드 오일이 함유되어 부드러운 질감의 포뮬러가 피부에 촉촉한 보습 효과를 선사합니다.</p>
+      </div>
+      <div class="col-lg-4 text-center">
+        <img src="./img/17_2_img2.jpeg" alt="">
+        <p>Lime Basil & Mandarin Body Creme - 풍부한 영양을 선사하는 라임 바질 앤 만다린 바디 크림으로 당신의 데일리 루틴을 완성해보세요. 코코아 버터와 스위트 아몬드 오일이 함유되어 부드러운 질감의 포뮬러가 피부에 촉촉한 보습 효과를 선사합니다.</p>
+      </div>
+      <div class="col-lg-4 text-center">
+        <img src="./img/17_2_img3.jpeg" alt="">
+        <p>Blackberry & Bay Body Creme - 시그니처 아이템인 핸드 트리트먼트는 집중적인 수분 공급 효과를 선사하여 피부를 다양한 외부 환경으로부터 보호해줍니다.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- 3. 점보트론 -->
+    <article class="container">
+      <div class="jumbotron text-center bg-body-tertiary rounded-3">
+        <h2>The fun and play begins...</h2>
+        <p class="txt01">즐거움과 장난, 신나는 소동이 가득한 시즌. 선물이 오가고 모두의 시선이 향기로운 기프트를 맴도는 축제의 만찬입니다. 
+        </p>
+        <p><a href="#" role="button" title="" class="btn btn-light btn-mg">더보기</a></p>
+      </div>
+    </article>
+  
+  <!-- 4. 가로 4단 목록 콘텐츠 -->
+  <article class="container mt-5 mb-5 row4list">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <img src="./img/17_4_img1.jpeg" alt="">
+        <h2 class="h02">Orange Bitters Cologne</h2>
+        <p class="text-truncate">매혹적인 겨울 칵테일의 향. 상큼한 시트러스가 두 방울 더해진 듯, 달콤한 오렌지와 신선한 만다린의 어코드가 어우러집니다.
+          쌉싸름한 오렌지가 더해져 풍성한 프룬 향을 드러내며, 관능적인 베이스에는 깊고 풍부한 샌달우드와 앰버 노트가 깔립니다.</p>
+        <a href="#" role="button" title="더보기" class="btn btn-dark btn-line">더보기</a>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <img src="./img/17_4_img2.jpeg" alt="">
+        <h2 class="h02">Sepcial-Edtion Cologne</h2>
+        <p class="text-truncate">황금빛 햇살이 내리쬐는 과수원, 풍성한 배의 달콤함을 우아한 화이트 프리지아가 감싸고, 로즈와 패출리가 깊이를 더합니다.</p>
+        <a href="#" role="button" title="더보기" class="btn btn-dark btn-line">더보기</a>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <img src="./img/17_4_img3.jpeg" alt="">
+        <h2 class="h02">Pine & Eucalyptus Diffuser</h2>
+        <p class="text-truncate">크리스마스 아침의 설렘을 담은 밝고 상쾌한 향. 향긋한 소나무와 상쾌한 유칼립투스가 축제의 기운을 가득 전합니다. 10개의 라탄 리드로 약 4~5개월간 향을 지속적으로 즐길 수 있으며, 최적의 효과를 위해 리드를 모두 동시에 사용하세요.</p>
+        <a href="#" role="button" title="더보기" class="btn btn-dark btn-line">더보기</a>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <img src="./img/17_4_img4.jpeg" alt="">
+        <h2 class="h02">Sandalwood Apricot Cologne</h2>
+        <p class="text-truncate">겨울 저녁의 분위기를 감싸안은 향. 따스한 샌달우드와 풍성한 바닐라가 어우러지고, 상쾌한 카다멈이 벨벳 같은 부드러움의 살구와 조화를 이룹니다. 이번 시즌을 위한 경쾌한 향입니다.</p>
+        <a href="#" role="button" title="더보기" class="btn btn-dark btn-line">더보기</a>
+      </div>
+    </div>
+  </article>
+  </main>
+
+  <!-- 푸터영역 -->
+  <footer class="container-fluid bg-dark pt-4 pb-4">
+    <div class="container">
+      <div class="float-end">
+        <a href="#" title="위로바로가기" class="link-light text-decoration-none">Top</a>
+      </div>
+      <p class="text-light">
+        &copy;Jo Malone London 2021 &middot;
+        <a href="#" title="이용약관" class="link-light text-decoration-none">이용약관 </a>&middot;
+        <a href="#" title="정보" class="link-light text-decoration-none">정보</a>
+      </p>
+      <p class="small text-white-50">
+        대표: Jean-Alexandre Havard | 주소: 서울시 강남구 강남대로 0000 | 사업자등록번호: 123-45-67890<br>
+        통신판매업신고번호: 2025-조말론-0001 | 고객센터: 02-1234-5678 (평일 09:00 - 18:00)
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
